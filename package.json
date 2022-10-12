@@ -1,6 +1,6 @@
 {
   "name": "rpi-ws281x-native",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "(raspberry-pi *only*) native bindings to control a strip of WS281x-LEDs with node.js",
   "keywords": [
     "raspberry",
@@ -25,6 +25,7 @@
   "license": "MIT",
   "scripts": {
     "install": "node-gyp rebuild -j4 --release",
+    "install-package": "npm version patch --no-git-tag-version && sudo npm install -g .",
     "upload": "if [ ! -z ${UPLOAD_DEST:-''} ] ; then rsync -azv --delete --exclude={.*,node_modules,build} . ${UPLOAD_DEST} ; fi"
   },
   "dependencies": {

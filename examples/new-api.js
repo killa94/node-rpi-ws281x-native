@@ -3,7 +3,7 @@ const ws281x = require('../lib/ws281x-native');
 const NUM_LEDS = parseInt(process.argv[2], 10) || 10;
 const STRIP_TYPE = process.argv[3] || 'ws2812';
 
-const channel = ws281x(NUM_LEDS, {stripType: STRIP_TYPE});
+const channel = ws281x(NUM_LEDS, { stripType: 'sk6812-grbw' });
 
 // ---- trap the SIGINT and reset before exit
 process.on('SIGINT', function() {
